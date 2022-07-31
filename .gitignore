@@ -1,0 +1,17 @@
+### tools ###
+.gradle
+build/
+
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+
+.vscode/
+.settings
+.project
+.classpath
+
+### projects ###
+kotlin-js-store

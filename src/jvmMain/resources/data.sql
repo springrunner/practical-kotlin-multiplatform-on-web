@@ -1,0 +1,3 @@
+insert into todos(id, text, state, created_date, last_modified_date) values ('0210B410-350F-428B-BD5D-1E96E669E261', 'Task One', 0, now(), now());
+insert into todos(id, text, state, created_date, last_modified_date) values ('5C187A17-AF31-461C-9F03-289B7B839317', 'Task Two', 0, now(), now());
+insert into todos(id, text, state, created_date, last_modified_date) values ('62A8C3D8-BE44-4725-8E43-BC58E5041B2B', 'Task Three', 0, now(), now());
