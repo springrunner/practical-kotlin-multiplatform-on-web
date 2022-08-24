@@ -4,10 +4,19 @@ import csstype.*
 import emotion.react.css
 import react.FC
 import react.Props
+import react.dom.html.InputType
 import react.dom.html.ReactHTML.div
+import react.dom.html.ReactHTML.input
 import react.dom.html.ReactHTML.section
+import react.useState
 
-val WelcomePage = FC<Props> {
+external interface WelcomePageProps : Props {
+    var name: String?
+}
+
+val WelcomePage = FC<WelcomePageProps> {
+    val (name, setName) = useState(it.name ?: "SpringRunner")
+
     section {
         css {
             position = Position.absolute
@@ -20,7 +29,14 @@ val WelcomePage = FC<Props> {
                 fontSize = 20.px
                 fontWeight = FontWeight.bold
             }
-            +"Hello, SpringRunner"
+            +"Hello, $name"
+        }
+        input {
+            type = InputType.text
+            value = name
+            onChange = { event ->
+                setName(event.target.value)
+            }
         }
     }
 }
