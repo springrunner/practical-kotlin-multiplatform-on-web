@@ -9,7 +9,10 @@ import todoapp.application.TodoCleanup
 import todoapp.application.TodoFind
 import todoapp.application.TodoModification
 import todoapp.application.TodoRegistry
+import todoapp.ui.todo.TodoComponents.ControlBar
 import todoapp.ui.todo.TodoComponents.Info
+import todoapp.ui.todo.TodoComponents.ListContainer
+import todoapp.ui.todo.TodoComponents.WriteBox
 import todoapp.ui.todo.TodoProviders.TodoProvider
 
 external interface TodoPageProps : Props {
@@ -23,9 +26,11 @@ val TodoPage = FC<TodoPageProps> { props ->
     section {
         className = ClassName("todoapp")
         TodoProvider {
-            // header: 할 일 작성하기 영역
-            // main: 할 일 목록 영역
-            // footer: 할 일 남은 갯수, 필터링 영역
+            WriteBox {
+                text = "todos"
+            }
+            ListContainer()
+            ControlBar()
 
             find = props.find
             registry = props.registry
