@@ -18,4 +18,9 @@ class TodoIdTest {
     fun `램덤_할일_일련번호_생성기로_일련번호를_생성해요`() {
         RandomTodoIdGenerator().generateId().shouldNotBeNull()
     }
+
+    @Test
+    fun `UUID_할일_일련번호_생성기로_일련번호를_생성해요`() {
+        UUIDTodoIdGenerator().generateId().shouldNotBeNull()
+    }
 }

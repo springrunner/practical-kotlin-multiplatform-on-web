@@ -6,6 +6,7 @@ import io.ktor.serialization.kotlinx.json.*
 import org.w3c.dom.url.URLSearchParams
 import todoapp.application.support.InMemoryTodoManager
 import todoapp.domain.RandomTodoIdGenerator
+import todoapp.domain.UUIDTodoIdGenerator
 import todoapp.serializer.Serializers
 import todoapp.web.client.HttpClientTodoManager
 
@@ -27,7 +28,7 @@ object TodoManagerFactory {
         )
         else -> UseCases.of(
             InMemoryTodoManager(
-                todoIdGenerator = RandomTodoIdGenerator()
+                todoIdGenerator = UUIDTodoIdGenerator()
             )
         )
     }
