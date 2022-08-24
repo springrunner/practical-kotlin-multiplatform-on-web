@@ -32,9 +32,10 @@ class IndexRouter : RouterFunction<ServerResponse> {
                 link(href = "/webjars/todomvc-app-css/2.4.1/index.css", rel = "stylesheet")
             }
             body {
-                // TODO 다음 HTML 태그를 작성하세요
-                // <div id="root"></div>
-                // <script src="/main.js"></script>
+                div {
+                    id = "root"
+                }
+                script(src = "/main.js") { }
             }
         }
     }
